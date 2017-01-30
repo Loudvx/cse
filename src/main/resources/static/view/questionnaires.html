@@ -1,0 +1,14 @@
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nom</th>
+			<th>Dates</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="questionnaire in questionnaires">
+			<td><a href="/questionnaires/{{questionnaire.id}}">{{questionnaire.nom}}</a></td>
+			<td>{{questionnaire.date_debut + " - " + questionnaire.date_fin}}</td>
+		</tr>
+	</tbody>
+</table>
