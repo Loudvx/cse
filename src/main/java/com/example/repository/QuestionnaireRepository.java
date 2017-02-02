@@ -1,5 +1,6 @@
 package com.example.repository;
 
+import java.util.List;
 import java.util.UUID;
 import com.example.entity.QuestionnaireEntity;
 import org.springframework.data.repository.CrudRepository;
@@ -9,5 +10,5 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface QuestionnaireRepository extends CrudRepository<QuestionnaireEntity, UUID> {
 
-    //Optional<Questionnaire> findByEntreprise();
+    List<QuestionnaireEntity> findAll();
 }

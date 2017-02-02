@@ -1,5 +1,6 @@
 package com.example.entity;
 
+import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ public class QuestionEntity {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Integer id;
+    private UUID id;
 
     private String intitule;
     private Integer id_questionnaire;
