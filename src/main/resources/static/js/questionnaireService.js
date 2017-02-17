@@ -2,7 +2,7 @@
 
 app.factory('QuestionnaireService', ['$http', '$q', function($http, $q){
 
-    var REST_SERVICE_URI = 'http://localhost:8080/questionnaire';
+    var REST_SERVICE_URI = 'http://sample-env-3.yvqfw6pgnj.us-west-2.elasticbeanstalk.com/questionnaire/';
 
     var factory = {
         getAllQuestionnaire: getAllQuestionnaire,

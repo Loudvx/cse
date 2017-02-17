@@ -4,10 +4,13 @@ import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * Created by Lou-Evans on 27/01/2017.
@@ -15,14 +18,18 @@ import lombok.Data;
 @Entity
 @Table(name = "question", schema = "public")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class QuestionEntity {
 
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     private UUID id;
 
     private String intitule;
-    private Integer id_questionnaire;
-    private Integer id_sous_question;
+    private UUID id_questionnaire;
+    private UUID id_sous_question;
 }

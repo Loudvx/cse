@@ -1,14 +1,13 @@
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Nom</th>
-			<th>Dates</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="questionnaire in questionnaires">
-			<td><a href="/questionnaires/{{questionnaire.id}}">{{questionnaire.nom_questionnaire}}</a></td>
-			<td>{{questionnaire.date_debut + " - " + questionnaire.date_fin}}</td>
-		</tr>
-	</tbody>
-</table>
+<div class="section group">
+	<div class="col span_1_of_3" ng-repeat="questionnaire in questionnaires">
+		<p class="cse"><strong><a ng-href="#Questionnaires/{{questionnaire.questionnaire.id}}">{{ questionnaire.questionnaire.nom_questionnaire }}</a></strong></p>
+		<p><strong>Entreprise :</strong> {{ questionnaire.questionnaire.entreprise }}</p>
+		<p><strong>Dates :</strong> {{ questionnaire.questionnaire.date_debut }} - {{ questionnaire.questionnaire.date_fin }}</p>
+		<p style="width:80%" data-value="{{ questionnaire.pourcentage }}">Avancement :</p>
+		<progress max="100" value="{{ questionnaire.pourcentage }}" class="progressbar">
+			<div class="progress-bar">
+				<span style="width: 80%">{{ questionnaire.pourcentage }}%</span>
+			</div>
+		</progress>
+	</div>
+</div>

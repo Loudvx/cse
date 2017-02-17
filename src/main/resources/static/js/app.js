@@ -9,6 +9,10 @@ app.config(function($routeProvider){
 		controller:'myCtrl', 
 		templateUrl:'/view/createQuestionnaire.html'
 	})
+	.when('/Questionnaires/:id?', {
+		controller:'myCtrl',
+		templateUrl:'view/affichageQuestionnaire.html'
+	})
 	.otherwise({
 		redirectTo:'/'
 	});

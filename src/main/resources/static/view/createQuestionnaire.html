@@ -1,1 +1,31 @@
-<p>TEST</p>
+<div class="btn">Inserer le nom du questionnaire<br>
+    <input ng-model="creationQuestionnaire.nom_questionnaire" type="text" size="100%" value="Input Text" onfocus="this.value=''" onblur="(this.value=='')? this.value='Input Text':this.value;"></div>
+<div class="btn">Inserer le nom de l'entreprise<br>
+    <input ng-model="creationQuestionnaire.entreprise" type="text" size="100%" value="Input Text" onfocus="this.value=''" onblur="(this.value=='')? this.value='Input Text':this.value;"></div>
+<div class="btn">Inserer la date de debut du questionnaire<br>
+    <input ng-model="creationQuestionnaire.date_debut" type="text" size="100%" value="Input Text" onfocus="this.value=''" onblur="(this.value=='')? this.value='Input Text':this.value;"></div>
+<div class="btn">Inserer la date de fin du questionnaire<br>
+    <input ng-model="creationQuestionnaire.date_fin" type="text" size="100%" value="Input Text" onfocus="this.value=''" onblur="(this.value=='')? this.value='Input Text':this.value;"></div>
+
+
+</div>
+<div>Ajouter une question
+    <input ng-click="addQuestion()" type="submit" class="btn4" value="+">
+</div>
+<div ng-repeat="question in creationQuestionnaire.questions track by $index">
+    <div class="btn">Question {{ $index + 1 }}<br>
+        <input ng-model="creationQuestionnaire.questions[$index].intitule" type="text" size="100%" value="Input Text" onfocus="this.value=''" onblur="(this.value=='')? this.value='Input Text':this.value;"></div>
+</div>
+    <input ng-click="saveQuestionnaire()" type="submit" class="btn3" value="Soumettre" href="#popup1">
+
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+            Sauvegardé
+        </div>
+    </div>
+</div>
+
+
+

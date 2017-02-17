@@ -1,0 +1,16 @@
+<div class="section group">
+    <p class="cse"><strong>{{ thisQuestionnaire.questionnaire.nom_questionnaire }}</strong></p>
+    <div class="col span_1_of_2" ng-repeat="question in thisQuestionnaire.questions">
+        <p class="question">{{ question.intitule }}</p><br>
+        <div class="main">
+            <input
+                    type="range"
+                    name="participants"
+                    min="0"
+                    max="10"
+                    value="5"
+            >
+            <span class="rangeslider__tooltip" id ="range-tooltip"></span>
+        </div>
+    </div>
+</div>
